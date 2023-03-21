@@ -1,0 +1,68 @@
+main {
+    width: 100%;
+    min-width: 36rem;
+    max-width: 90rem;
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+    border-bottom: 1rem solid gray;
+    background-color: white;
+    background-image: url('../../../../Assets/bienesraices__fondo.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    .main__rentar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        margin: 0 auto;
+
+        h1 {
+            
+            width: 100%;
+            margin: 0 auto;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: rgb(193, 137, 52);
+            text-align: center;
+            text-decoration: underline 0.4rem ;
+            font-family: 'Montserrat';
+        }
+    }
+
+    .main__info {
+        width: 80%;
+
+        margin: 0 auto;
+        font-family: 'Montserrat';
+        margin-top: 3rem;
+        
+        h5 {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+            line-height: 3rem;
+            text-align: justify;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+    }
+    .main__acerca--photo {
+            
+        width: 80%;
+        min-width: 33rem;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 4rem;
+        
+        img {
+            width: 100%;
+        }
+    }
+}
