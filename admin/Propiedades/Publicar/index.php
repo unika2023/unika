@@ -74,6 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $colonia = $_POST['colonia'];
             $cliente = $_POST['cliente'];
             $superficie_terreno = filter_var(mysqli_real_escape_string($db, $_POST['superficie_terreno']), FILTER_SANITIZE_NUMBER_FLOAT);
+            // $superficie_terreno = $_POST['superficie_terreno'];
             $superficie_construccion = filter_var(mysqli_real_escape_string($db, $_POST['superficie_construccion']), FILTER_SANITIZE_NUMBER_FLOAT);
             $habitaciones = filter_var(mysqli_real_escape_string($db, $_POST['habitaciones']), FILTER_SANITIZE_NUMBER_INT);
             $estacionamiento = filter_var(mysqli_real_escape_string($db, $_POST['estacionamiento']), FILTER_SANITIZE_NUMBER_INT);
@@ -362,11 +363,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </section>
                     <label for="superficie_terreno">
                         <span>Superficie del Terreno*</span>
-                        <input class="input__text" type="number" id="superficie_terreno" name="superficie_terreno" placeholder="En m2" min="50" required>
+                        <input class="input__text" type="number" id="superficie_terreno" name="superficie_terreno" placeholder="En m2">
                     </label>
                     <label for="superficie_construccion">
                         <span>Superficie de Construcción</span>
-                        <input class="input__text" type="number" id="superficie_construccion" name="superficie_construccion" placeholder="En m2" min="50" maxlength="45">
+                        <input class="input__text" type="number" id="superficie_construccion" name="superficie_construccion" placeholder="En m2">
                     </label>
                     <label for="habitaciones">
                         <span>Introduce el Número de Habitaciones</span>
@@ -374,11 +375,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </label>
                     <label for="estacionamiento">
                         <span>Introduce el Número de Lugares de Estacionamiento</span>
-                        <input class="input__text" type="number" id="estacionamiento" name="estacionamiento" placeholder="N° de Lugares" min="0">
+                        <input class="input__text" type="number" id="estacionamiento" name="estacionamiento" placeholder="N° de Lugares">
                     </label>
                     <label for="banos">
                         <span>Introduce el Número de Baños</span>
-                        <input class="input__text" type="number" id="banos" name="banos" placeholder="N° de Baños" min="0">
+                        <input class="input__text" type="number" id="banos" name="banos" placeholder="N° de Baños" min="0" step="any">
                     </label>
                     <label for="descripcion">
                         <span>Descripción*</span>
@@ -388,9 +389,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <span>Observaciones*</span>
                         <textarea class="input__text" type="text" id="observaciones" name="observaciones" placeholder="Observaciones" max="1000" required></textarea>
                     </label>
-                    <section class="select__config" id="0">
+                    <section class="select__config">
                         <span>Otras Características *</span>
-                        <select name="otras0" required>
+                        <select name="otras0" id="" required>
                             <option value="">
                                 <--Selecciona-->
                             </option>
@@ -398,8 +399,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <option value="<?php echo $row['idAmenidades']; ?>"><?php echo $row['NombreAmenidades']; ?></option>
                             <?php endwhile; ?>
                         </select>
-                        <div class="button__add">
-                            <a id="add" class="add">+</a>
+                        <div class="button__new">
+                            <a class="new" href="../Caracteristica/index.php">Nueva</a>
                         </div>
                     </section>
                     <section class="select">
