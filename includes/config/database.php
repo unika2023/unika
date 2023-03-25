@@ -3,8 +3,8 @@
 function conectarDB()
 {
     // 'unikabie_admin', 'Ivan1975*'
-    $db = mysqli_connect('localhost', 'unikabie_admin', 'Ivan1975*', 'unikabie_bienesraices');
-    //$db = mysqli_connect('localhost', 'root', '', 'unikabie_bienesraices');
+    //$db = mysqli_connect('localhost', 'unikabie_admin', 'Ivan1975*', 'unikabie_bienesraices');
+    $db = mysqli_connect('localhost', 'root', '', 'unikabie_bienesraices');
 
     if (!$db) {
 

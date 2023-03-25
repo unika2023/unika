@@ -134,7 +134,7 @@ function utf8($string)
 
         <section class="main__vender">
             <h1>INMUEBLES EN <?php echo strtoupper($nombreOperacion) ?></h1>
-            <p><?php echo   $estado ?></p>
+            <p><?php echo $estado ?></p>
         </section>
         <section class="main__inmuebles">
 
@@ -143,7 +143,7 @@ function utf8($string)
 
 
                 <a class="main__cardMunicipio" href="./inmueble.php?id=<?php echo $row['idInmueble']; ?>">
-                    <h1><?php echo utf8($row['nombreMunicipio']) ?></h1>
+                    <h1><?php echo $row['nombreMunicipio'] ?></h1>
                     <section class="cardMunicipio__cardInmueble">
 
 
