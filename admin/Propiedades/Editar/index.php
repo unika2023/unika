@@ -543,7 +543,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
                     </section>
                     <section class="select__config">
-                        <span>Cliente*</span>
+                        <span>Propietario</span>
                         <select name="cliente" id="" required>
                             <option value=''>
                                 <--Selecciona-->
@@ -558,7 +558,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </section>
                     <label for="superficie_terreno">
                         <span>Superficie del Terreno</span>
-                        <input class="input__text" value="<?php echo $superficie_terreno;  ?>" type="number" id="superficie_terreno" name="superficie_terreno" placeholder="En m2" min="50" required>
+                        <input class="input__text" value="<?php echo $superficie_terreno;  ?>" type="number" id="superficie_terreno" name="superficie_terreno" placeholder="En m2">
                     </label>
                     <label for="superficie_construccion">
                         <span>Superficie de Construcción</span>
