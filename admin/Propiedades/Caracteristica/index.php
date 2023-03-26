@@ -162,7 +162,7 @@
                             <td>Borrar</td>
                         </tr>
 
-                    </table> NombreImagenAmenidades	
+                    </table> 
 
                 </section table__title="" >
 
@@ -175,6 +175,10 @@
                         <tr>
 
                             <td><?php  echo $row['NombreAmenidades']?></td>
+                            <td class="table__editar">
+                            <input type="hidden"  class="input-borrar" onclick="preguntar(<?php echo $row['idAmenidades']?>)" >
+                            <input type="button" class="input-borrar" alt="" onclick="preguntar(<?php echo $row['idAmenidades']?>)">
+                            </td>
 
 
 

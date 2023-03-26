@@ -380,7 +380,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </label>
                     <label for="banos">
                         <span>Introduce el Número de Baños</span>
-                        <input class="input__text" type="number" id="banos" name="banos" placeholder="N° de Baños" min="0" step="any">
+                        <input class="input__text" type="number" id="banos" name="banos" placeholder="N° de Baños" min="0" step="0.5">
                     </label>
                     <label for="descripcion">
                         <span>Descripción*</span>
