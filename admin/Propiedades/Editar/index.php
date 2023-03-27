@@ -574,11 +574,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </label>
                     <label for="banos">
                         <span>Introduce el Número de Baños</span>
-                        <input class="input__text" value="<?php echo $banos ?>" type="number" id="banos" name="banos" placeholder="N° de Baños" step="any">
+                        <input class="input__text" value="<?php echo $banos ?>" type="number" id="banos" name="banos" placeholder="N° de Baños" step="0.5">
                     </label>
-                    <section class="select__config" id="0">
+
+                    <section class="select__config">
                         <span>Otras Características *</span>
-                        <select name="otras0">
+                        <select name="otras0" id="" required>
                             <option value="">
                                 <--Selecciona-->
                             </option>
@@ -586,41 +587,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <option value="<?php echo $row['idAmenidades']; ?>"><?php echo $row['NombreAmenidades']; ?></option>
                             <?php endwhile; ?>
                         </select>
-                        <div class="button__add">
-                            <a id="add" class="add">+</a>
+                        <div class="button__new">
+                            <a class="new" href="../Caracteristica/index.php">Nueva</a>
                         </div>
                     </section>
-                    <?php
-                    $i = 0;
-                    while ($row = mysqli_fetch_assoc($consultaOtrasCaracteristicas)) :
-
-                        $i++;
-                        $consultaAmenidadesTerciario = "SELECT idAmenidades, NombreAmenidades FROM amenidades;";
-                        $resultadoAmenidadesTerciario = mysqli_query($db, $consultaAmenidadesTerciario);
-                        global $consultaAmenidadesTerciario;
-                        global $resultadoAmenidadesTerciario;
-                    ?>
 
 
-                        <section id="<?php echo $i; ?>" class="select__config">
-                            <span>Otras Características *</span>
-                            <select name="<?php echo "otras" . $i ?>" required>
-                                <option>
-                                    <--Selecciona-->
-                                </option>
-                                <?php
 
-                                while ($row2 = mysqli_fetch_assoc($resultadoAmenidadesTerciario)) : ?>
-                                    <option <?php echo $row['idAmenidades'] == $row2['idAmenidades'] ? 'selected' : ''; ?> value="<?php echo $row2['idAmenidades']; ?>"><?php echo $row2['NombreAmenidades']; ?></option>
-                                <?php endwhile; ?>
-                            </select>
-                            <div id="<?php echo $i; ?>" class="button__delete">
-                                <a class="delete">-</a>
-                            </div>
-                        </section>
-                    <?php
-                    endwhile;
-                    ?>
                     <label for="cp">
                         <span>Código Postal</span>
                         <input class="input__text" type="text" id="cbx_cp" value="<?php echo $cp ?>" name="cp" placeholder="3100" max="7" required>
