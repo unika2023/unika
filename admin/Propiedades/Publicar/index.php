@@ -37,7 +37,7 @@ $resultadoOperacion = mysqli_query($db, $consultaOperacion);
 $consultaCliente = "SELECT idCliente, Correo FROM cliente WHERE Activo = 1;";
 $resultadoCliente = mysqli_query($db, $consultaCliente);
 // Consulta de los tipos de amenidades para el select primario
-$consultaAmenidadesPrimario = "SELECT idAmenidades, NombreAmenidades FROM amenidades;";
+$consultaAmenidadesPrimario = "SELECT idAmenidades, NombreAmenidades FROM amenidades ORDER BY NombreAmenidades ASC;";
 $resultadoAmenidadesPrimario = mysqli_query($db, $consultaAmenidadesPrimario);
 // Consulta de los tipos de amenidades para el select secundario
 $consultaAmenidadesSecundario = "SELECT idAmenidades, NombreAmenidades FROM amenidades;";
@@ -390,6 +390,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <span>Observaciones*</span>
                         <textarea class="input__text" type="text" id="observaciones" name="observaciones" placeholder="Observaciones" max="1000" required></textarea>
                     </label>
+
                     <section class="select__config">
                         <span>Otras Características *</span>
                         <select name="otras0" id="" required>
@@ -404,6 +405,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <a class="new" href="../Caracteristica/index.php">Nueva</a>
                         </div>
                     </section>
+
+
                     <section class="select">
                         <label for="cp">
                             <span>Código Postal*</span>

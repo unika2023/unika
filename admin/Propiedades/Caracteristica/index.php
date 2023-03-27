@@ -11,7 +11,7 @@
     $db = conectarDB();
 
 
-    $consultaAmenidadesPrimario = "SELECT idAmenidades, NombreAmenidades FROM amenidades;";
+    $consultaAmenidadesPrimario = "SELECT idAmenidades, NombreAmenidades FROM amenidades ORDER BY NombreAmenidades ASC;";
     $resultadoAmenidadesPrimario = mysqli_query($db, $consultaAmenidadesPrimario);
 
     // Funcion para la limpieza de datos
@@ -43,7 +43,7 @@
 
     if(isset($_GET['del'])) {
         $idTipo_Operacion = $_GET['del'];
-        $queryBorrarOperacion = "DELETE from tipo_operacion where idTipo_Operacion = $idTipo_Operacion";
+        $queryBorrarOperacion = "DELETE from amenidades where idAmenidades = $idTipo_Operacion";
         $queryEditarInmueble = "UPDATE inmueble SET idTipo_Operacion = 7 WHERE idTipo_Operacion = $idTipo_Operacion";
         $resultadoEditarInmueble = mysqli_query($db, $queryEditarInmueble);
         $resultadoBorrar = mysqli_query($db, $queryBorrarOperacion);
@@ -151,7 +151,7 @@
                         <a class="volver" href="../Publicar/index.php">Volver</a>
                     </div>
                     <div class="button__new">
-                        <a class="new" href="NuevaOperacion/index.php">Nueva Característica</a>
+                        <a class="new" href="NuevaCaracterisitca/index.php">Nueva Característica</a>
                     </div>
                 </section>
 
@@ -211,7 +211,7 @@ require '../../../includes/footer.php'
 <script type="text/javascript">
 
 function preguntar(id){
-    if(confirm('¿Estas seguro que deseas borrar el tipo de operación?')){
+    if(confirm('¿Estas seguro que deseas borrar la característica?')){
         window.location.href = "index.php?del=" + id;
     }
 }

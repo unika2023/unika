@@ -49,7 +49,7 @@
         $operacion = limpieza( mysqli_real_escape_string($db, $_POST['operacion']));
 
 
-        $queryNewOperacion = "INSERT INTO tipo_operacion (Nombre_Operacion, Activo) VALUES ('$operacion', '1')";
+        $queryNewOperacion = "INSERT INTO amenidades (NombreAmenidades) VALUES ('$operacion')";
 
         $resultadoNewOperacion = mysqli_query($db, $queryNewOperacion);
 
@@ -130,8 +130,8 @@
         <form action="" method="POST">
 
             <label for="operacion">
-                <span>Operación</span>
-                <input type="text" id= "operacion" name="operacion" placeholder = "Operación Name" required maxlength="50">
+                <span>Característica</span>
+                <input type="text" id= "operacion" name="operacion" placeholder = "Característica Name" required maxlength="50">
             </label>
 
 
